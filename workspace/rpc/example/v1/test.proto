@@ -23,8 +23,12 @@ message HelloResponse {
 
 
 //https://blog.csdn.net/weixin_43770545/article/details/91894434
-// https://juejin.im/post/5d8467fef265da03cc08f5c3
-// http://www.pangxieke.com/go/mac-install-grpc-of-go.html
+//https://juejin.im/post/5d8467fef265da03cc08f5c3
+//http://www.pangxieke.com/go/mac-install-grpc-of-go.html
+
+//生成pb.go protoc --go_out=plugins=grpc:. *.protoo
+//生成twirp.go和pb.go   命令: protoc --twirp_out=. --go_out=plugins=grpc:. test.proto
+
 
 
 
