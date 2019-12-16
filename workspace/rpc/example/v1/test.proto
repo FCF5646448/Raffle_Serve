@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package example.v1; // 包名，与目录保持一致
+
+// 服务名，与目录保持一致，原则上只要定义一个 service
+service Echo {
+  // 服务方法，按需定义
+  rpc Hello(HelloRequest) returns (HelloResponse);
+}
+
+// 入参定义
+message HelloRequest {
+  string message = 1; // 这是行尾注释，业务方一般不要使用
+}
+
+message HelloMessage {
+  string message = 1;
+}
+
+message HelloResponse {
+  // 业务错误码[机读]，必须大于零
+  // 小于零的主站框架在用，注意避让。
+  int32 code = 1;
+  // 业务错误信息[人读]
+  string msg = 2;
+  // 业务数据对象
+  HelloMessage data = 3;
+}
+
+// 接口测试
+// curl -H  "Content-Type:application/json" -X POST -d '{"message":"hello"}' http://127.0.0.1:8080/twirp/example.v1.Echo/Hello
