@@ -4,6 +4,8 @@ import (
 	"net/http"
 
 	"sniper/cmd/server/hook"
+	example_v1 "sniper/rpc/example/v1"
+	"sniper/server/exampleServerTest"
 
 	"github.com/bilibili/twirp"
 )
@@ -20,7 +22,12 @@ var loginHooks = twirp.ChainHooks(
 )
 
 func initMux(mux *http.ServeMux,isInternal bool) {
+
+	server := &exampleServerTest.Server{}
+	handler := example_v1.NewEchoServer(server, hooks)
+	mux.Handle(example_v1.EchoPathPrefix, handler)
 }
 
 func initInternalMux(mux *http.ServeMux) {
+
 }

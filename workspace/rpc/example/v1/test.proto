@@ -3,7 +3,7 @@ syntax = "proto3";
 package example.v1; // 包名，与目录保持一致
 
 
-service Greeter {
+service Echo {
     rpc SayHello(HelloRequest) returns (HelloResponse);
 }
 
@@ -11,14 +11,17 @@ message HelloRequest {
     string name = 1;
 }
 
-message HelloResponse {
+message HelloMessage {
     string message = 1;
 }
 
+message HelloResponse {
+    int32 code = 1;
+    string msg = 2;
+    HelloMessage data = 3;
+}
 
-
-
-
+//curl -H  "Content-Type:application/json" -X POST -d '{"name":"hello"}' http://127.0.0.1:8080/twirp/example.v1.Echo/SayHello
 
 
 
