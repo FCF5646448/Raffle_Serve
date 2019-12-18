@@ -2,6 +2,8 @@
 GOPATH是GoLang的环境变量，GoRoot是go安装的地方，自动会生成，不要手动设置。GoBin是GoPath下的bin目录，主要用于放置一些第三方运行包。
 
 
+
+
 #### 安装protoc
 protoc是Protobuf 的编译器
 
@@ -57,10 +59,6 @@ service Echo定义的是接口。
 
 
 
-
-
-
-
 ####  sniper使用
 
 然后回到项目根目录，go build 编译一下，
@@ -72,7 +70,27 @@ go run main.go server --port=8080
 
 
 
-
 处理代理：
 git config --global http.proxy http://127.0.0.1:1087
 git config --global https.proxy http://127.0.0.1:1087
+
+
+
+
+
+
+
+
+#### 后续学习
+完整的golang学习网站：
+1：https://www.kancloud.cn/uvohp5na133/golang/934133
+2：https://www.cnblogs.com/Survivalist/articles/10429518.html
+3：https://www.jianshu.com/p/bd19a607b5a8
+
+grpc&protocbuf使用：
+1、http://www.pangxieke.com/go/mac-install-grpc-of-go.html
+2、https://www.jishuwen.com/d/pkZy
+3、https://juejin.im/post/5d8467fef265da03cc08f5c3
+
+
+
